@@ -3,7 +3,7 @@ const cities = require ('./app');
 let maxPopulation = 0;
 let nameOfCityMaxPopulation = '';
 
-cities.ForEach(city => {
+cities.forEach(city => {
     if (parseInt(city.population) > maxPopulation) {
         maxPopulation = city.population;
         nameOfCityMaxPopulation = city.name;
