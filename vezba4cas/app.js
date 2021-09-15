@@ -3,6 +3,8 @@ const app = express();
 
 app.use(express.json());
 
+
+
 let drzavi = [
     {
         id: '3',
@@ -12,17 +14,21 @@ let drzavi = [
     }
 ];
 
+app
+.get('/drzavi', (req,res) => {
+    res.send(drzavi);
+})
+
 
 app
-    .post('drzavi', (req, res) => {
+    .post('/drzavi', (req, res) => {
         drzavi.push(req.body);
         res.send(drzavi);
     })
 app
-    .get('drzavi', (req, res) => {
-        const filteredDrzavi = drzavi.filter(drzava => drzava.id != req.params.id);
-        drzavi = filteredDrzavi;
-        res.send(drzavi);
+    .get('/drzavi/:id', (req, res) => {
+      const drzava = drzavi.find(drzava => drzava.id == req.params.id);
+        res.send(drzava);
     })
 
 
@@ -33,6 +39,7 @@ app
                 drzavi[i] = req.body;
             }
         }
+        res.send(drzavi);
     });
 
 app
