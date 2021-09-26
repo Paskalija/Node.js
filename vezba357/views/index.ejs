@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to <%= title %>
+  </p>
+
+
+  <table>
+    <thead>
+      <td>Ime</td>
+      <td>Prezime </td>
+      <td>Maticen</td>
+    </thead>
+    <tbody>
+      <% luge.forEach(covek => { %>
+<tr>
+  <td>
+    <%= luge.ime %>
+  </td>
+</tr>
+<tr>
+  <td>
+    <%= luge.prezime %>
+  </td>
+</tr>
+<tr>
+  <td>
+    <%= luge.maticen %>
+  </td>
+</tr>
+      <% }); %>
+      <tr>
+        <td>Paskalija</td>
+        <td>Koneska</td>
+        <td>357357357</td>
+
+
+
+      </tr><br />
+      <tr>
+
+        <td>Kristina</td>
+        <td>Vasilevska</td>
+        <td>357357357</td>
+      </tr>
+      <br />
+      <tr>
+
+        <td>Klaudija</td>
+        <td>Jordanova</td>
+        <td>357357357</td>
+      </tr>
+    </tbody>
+  </table>
+  <form action="/luge" method="post"></form>
+  Ime<input type="text"/><br/>
+  Prezime<input type="text"/><br/>
+  Maticen<input type="text"/><br/>
+  <button type="submit">Dodadi</button>
+</body>
+
+</html>
