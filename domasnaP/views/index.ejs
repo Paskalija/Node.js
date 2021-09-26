@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <table>
+      <thead>
+        <td>Ime</td>
+        <td>Prezime</td>
+        <td>Maticen</td>
+      </thead>
+      <tbody>
+        <% vraboteni.forEach(vraboten => {  %>
+          <tr>
+            <td><% vraboteni.ime %></td>
+            <td><% vraboteni.prezime %></td>
+            <td><% vraboteni.maticen %></td>
+          </tr>
+          
+        <%  }); %>
+       
+      </tbody>
+    </table>
+    <form action="/vraboteni" method="post">
+      Ime <input type="text" name="ime"/><br/>
+      Prezime <input type="text" name="prezime"/><br/>
+      Maticen <input type="number" name="maticen"/><br/>
+      <button type="submit"> Dodadi </button>
+    </form>
+  </body>
+</html>
