@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Koli </title>
+    <link rel="stylesheet" href="/public/stylesheets/ce.css"/>
+</head>
+<body>
+    <h3>Koli</h3>
+    <table>
+        <thead>
+            <td> Model </td>
+            <td> Serija </td>
+            <td> Godina</td>
+        </thead>
+        <tbody>
+            <% koli.map((kola)=> {%>
+                <tr>
+                    <td>
+                        <%= kola.model %>
+                    </td>
+                    <td>
+                        <%= kola.serija %>
+                    </td>
+                    <td>
+                        <%= kola.godina %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    <br/>
+    <form action="/koli" method="POST">
+        <input type="text" name="model" placeholder="Model" /></br>
+        <input type='text' name="serija" placeholder="Serija" /></br>
+        <input type='number' name="godina" placeholder="Godina" /></br>
+        <button type="submit">Dodadi</button>
+    </form>
+</body>
+</html>
