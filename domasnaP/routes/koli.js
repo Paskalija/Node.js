@@ -5,12 +5,12 @@ const koli = [];
 
 
 router
-  .get('/', (req, res,) => {
-    res.render('index', { title: 'Express' , koli:koli });
+  .get('/', (req, res) => {
+    res.render('koli', { koli:koli });
   })
-  .post('/koli', (req, res,) => {
+  .post('/', (req, res) => {
     koli.push(req.body);
     console.log(koli);
-    res.redirect('/');
+    res.redirect('/koli');
   });
 module.exports = router;
