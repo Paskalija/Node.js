@@ -6,7 +6,8 @@ const mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
-const categoryRouter= require('./routes/categories');
+const categoryRouter = require('./routes/categories');
+const productRouter = require('./routes/products');
 var app = express();
 
 mongoose.connect('mongodb://localhost:27017/gen-14-ws');
@@ -20,7 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
-app.use('/categories',categoryRouter);
+app.use('/categories', categoryRouter);
+app.use('/products', productRouter);
 app.use((err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {
     res.status(401).send({
