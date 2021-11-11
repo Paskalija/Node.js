@@ -8,7 +8,11 @@ var usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
 const categoryRouter = require('./routes/categories');
 const productRouter = require('./routes/products');
+const commentRouter = require('./routes/comments');
+const paymentsRouter = require('./routes/payments');
 var app = express();
+
+require('dotenv').config();
 
 mongoose.connect('mongodb://localhost:27017/gen-14-ws');
 
@@ -23,6 +27,7 @@ app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/categories', categoryRouter);
 app.use('/products', productRouter);
+app.use('/comments',commentRouter)
 app.use((err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {
     res.status(401).send({

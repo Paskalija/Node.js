@@ -22,4 +22,4 @@ const captureOrder = async (captureId) => {
   console.log(`Capture: ${JSON.stringify(response.result)}`);
 }
 
-captureOrder('7UH97714RU706762G');
+captureOrder('4X9736645G045770K');

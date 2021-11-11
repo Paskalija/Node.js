@@ -16,6 +16,10 @@ const postSchema = mongoose.Schema({
   category: {
     type: mongoose.Types.ObjectId,
     ref: 'category'
+  },
+  comment: {
+    type: mongoose.Types.ObjectId,
+    ref: 'comment'
   }
 }, { timestamps: true });
 
